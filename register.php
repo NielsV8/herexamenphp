@@ -5,7 +5,7 @@
             'cost' => 12,
         ];
         $password = password_hash($_POST['password'], PASSWORD_DEFAULT, $options);
-// OKEY
+
         $conn = new PDO("mysql:host=localhost:8889;dbname=php", "root", "root");
         $query = $conn->prepare("insert into users (username, password) values (:username, :password)");
         $query->bindValue(":username", $username);
