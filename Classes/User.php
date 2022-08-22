@@ -11,6 +11,16 @@
                 return $this->username;
         }
 
+        public static function getUsernames($username)
+        {
+                $conn = Db::getConnection();
+                $query = $conn->prepare("select * from users where username = :username");
+                $query->bindValue(":username", $username);
+                $query->execute();
+                $user = ($query->fetch());
+                return $user;
+        }
+
         public function setUsername($username): self
         {
                 $this->username = $username;
