@@ -1,16 +1,18 @@
 <?php 
-    if(!empty($_POST)){
-        $username = $_POST['username'];
-        $options = [
-            'cost' => 12,
-        ];
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT, $options);
+    include_once(__DIR__ ."/Classes/User.php");
 
-        $conn = new PDO("mysql:host=localhost:8889;dbname=php", "root", "root");
-        $query = $conn->prepare("insert into users (username, password) values (:username, :password)");
-        $query->bindValue(":username", $username);
-        $query->bindValue(":password", $password);
-        $query->execute();
+    if(!empty($_POST)){
+        try{
+            $user = new User();
+            $user->setUsername($_POST['username']);
+            $user->setPassword($_POST['password']);
+            $user->register();
+            session_start();
+            $_SESSION ['username'] = $user->getUsername();
+            header("location: index.php");
+        } catch (Exception $e){
+            echo $e->getMessage();
+        }
     }
 ?><!DOCTYPE html>
 <html lang="en">
