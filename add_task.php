@@ -30,6 +30,7 @@
             <input type="text" id="title" name="title">
             <input type="number" id="hours" name="hours">
             <input type="date" id="deadline" name="deadline">
+            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']?>">
         </div>
         <button type="submit" class="btn">Add Task</button>
     </form>

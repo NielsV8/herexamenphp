@@ -71,10 +71,11 @@
 
         public function save(){
             $conn = Db::getConnection();
-            $query = $conn->prepare("insert into task (title, hours, deadline) values (:title, :hours, :deadline)");
+            $query = $conn->prepare("insert into task (title, hours, deadline, user_id) values (:title, :hours, :deadline, :user_id)");
             $query->bindValue(":title", $this->title);
             $query->bindValue(":hours", $this->hours);
             $query->bindValue(":deadline", $this->deadline);
+            $query->bindValue(":user_id", $this->user_id);
             $query->execute();
         }
 
@@ -93,5 +94,12 @@
             $query->execute();
             $task = ($query->fetchAll());
             return $task;
+        }
+
+        public static function deleteTask($task_id){
+            $conn = Db::getConnection();
+            $query = $conn->prepare("delete from task where task_id = :task_id");
+            $query->bindValue(":task_id", $task_id);
+            $query->execute();
         }
     }

@@ -1,6 +1,7 @@
 <?php
     include_once(__DIR__ ."/Classes/User.php");
     include_once(__DIR__ ."/Classes/Task.php");
+    include_once(__DIR__ ."/Classes/List.php");
 
     $tasks = Task::getAll();
 ?><!DOCTYPE html>
@@ -11,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 </head>
+
 <body>
     <?php if(!empty($tasks)): ?>
     <?php foreach($tasks as $task): ?>
