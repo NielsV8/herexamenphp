@@ -79,15 +79,6 @@
             $query->execute();
         }
 
-        public static function getTaskById($task_id){
-            $conn = Db::getConnection();
-            $query = $conn->prepare("select * from task where task_id = :task_id");
-            $query->bindValue(":task_id", $task_id);
-            $query->execute();
-            $task = ($query->fetch());
-            return $task;
-        }
-
         public static function getAll(){
             $conn = Db::getConnection();
             $query = $conn->prepare("select * from task");
@@ -101,5 +92,22 @@
             $query = $conn->prepare("delete from task where task_id = :task_id");
             $query->bindValue(":task_id", $task_id);
             $query->execute();
+        }
+
+        public static function getTaskById($task_id){
+                $conn = Db::getConnection();
+                $query = $conn->prepare("select * from task where task_id = :task_id");
+                $query->bindValue(":task_id", $task_id);
+                $query->execute();
+                $task = ($query->fetch());
+                return $task;
+            }
+
+        public static function getAllById($task_id){    
+            $conn = Db::getConnection();
+            $query = $conn->prepare("select * from task where task_id = :task_id");
+            $query->bindValue(":task_id", $task_id);
+            $query->execute();
+            return $query->fetchAll(PDO::FETCH_ASSOC);
         }
     }

@@ -2,8 +2,9 @@
     include_once(__DIR__ ."/Classes/User.php");
     include_once(__DIR__ ."/Classes/Task.php");
     include_once(__DIR__ ."/Classes/List.php");
-
+    
     $tasks = Task::getAll();
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,7 @@
 <body>
     <?php if(!empty($tasks)): ?>
     <?php foreach($tasks as $task): ?>
-        <a href="task.php?id=<?php echo $task['user_id'];?>"><?php echo $task['title']; ?></a>
+        <a href="task.php?id=<?php echo $task['task_id'];?>"><?php echo $task['title']; ?></a>
     <?php endforeach; ?>
     <?php endif; ?>  
     <?php if(empty($tasks)): ?>

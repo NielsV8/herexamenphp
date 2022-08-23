@@ -2,8 +2,8 @@
     include_once(__DIR__ ."/Classes/Task.php");
     include_once(__DIR__ ."/Classes/User.php");
 
-    $task_id = $_GET['id'];
-    $tasks = Task::getAll();
+    $task_id = $_GET["id"];
+    $tasks = Task::getAllById($task_id);
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -14,10 +14,12 @@
     <title>Task</title>
 </head>
 <body>
+    <?php if(!empty($tasks)): ?>
     <?php foreach($tasks as $task): ?>
             <h1><?php echo $task['title']; ?></h1>
             <p><?php echo $task['hours']; ?></p>
             <p><?php echo $task['deadline']; ?></p>
     <?php endforeach; ?>
+    <?php endif ?>
 </body>
 </html>
