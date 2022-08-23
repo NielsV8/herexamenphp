@@ -9,10 +9,12 @@
             $user = new User();
             $user->setUsername($_POST['username']);
             $user->setPassword($_POST['password']);
-            if($user->login($username, $password)){
-                session_start();
-                $_SESSION ['username'] = $user->getUsername();
-                header("location: index.php");
+            if(!empty($username && $password)){
+                if($user->login($username, $password)){
+                    session_start();
+                    $_SESSION ['username'] = $user->getUsername();
+                    header("location: index.php");
+                }
             }
         } catch (Exception $e){
             echo $e->getMessage();

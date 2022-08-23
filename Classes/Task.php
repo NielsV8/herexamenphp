@@ -28,7 +28,11 @@
         public function setTitle($title): self
         {
                 $this->title = $title;
-
+                if(!empty($this->title)){
+                        return $this;
+                    } else {
+                        throw new Exception("Title may not be empty");
+                    }
                 return $this;
         }
 

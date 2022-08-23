@@ -2,8 +2,13 @@
     include_once(__DIR__ ."/Classes/User.php");
     include_once(__DIR__ ."/Classes/Task.php");
     include_once(__DIR__ ."/Classes/List.php");
+    include_once(__DIR__ ."/Classes/Security.php");
 
-    $tasks = Task::getAll();
+    if(Security::loggedInUser()){
+        $tasks = Task::getAll();
+    } else {
+        header("Location: login.php");
+    }
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -25,7 +30,7 @@
     <?php endif ?>
     
     <form action="logout.php">
-        <input type="submit" name="Log Out" id="logout">
+        <input type="submit" value="Log Out" name="logout" id="logout">
     </form>
 </body>
 </html>
