@@ -2,7 +2,7 @@
     include_once(__DIR__ ."/Classes/User.php");
     include_once(__DIR__ ."/Classes/Task.php");
     include_once(__DIR__ ."/Classes/List.php");
-    
+
     $tasks = Task::getAll();
 
 ?><!DOCTYPE html>
@@ -24,5 +24,8 @@
         <p>No lists</p>
     <?php endif ?>
     
+    <form action="logout.php">
+        <input type="submit" name="Log Out" id="logout">
+    </form>
 </body>
 </html>
