@@ -32,15 +32,14 @@
 </head>
 <body>
     <div class="layout">
-
-    <h1 class="addit">Add-It</h1>
+    <h1 class="addit">Log In</h1>
     <p class="addit">Add-It makes keeping track of your habits and tasks way easier.<br> Join now to get started!</p>
     <form action="" method="post">
-        <div class="login-input">
+        <div class="input">
             <label for="username">Username</label>
-            <input type="text" id="username" class="login-input-field" name="username">
+            <input type="text" id="username" class="input-field" name="username">
             <label for="password">Password</label>
-            <input type="password" id="password" class="login-input-field" name="password">
+            <input type="password" id="password" class="input-field" name="password">
         </div>
         <button type="submit" class="btn">Log In</button>
     </form>

@@ -21,18 +21,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Register</title>
 </head>
 <body>
+    <div class="layout">
+    <h1 class="addit">Register</h1>
+    <p class="addit">Add-It makes keeping track of your habits and tasks way easier.<br> Join now to get started!</p>
     <form action="" method="post">
-        <div class="signup">
-            <input type="text" id="username" name="username">
-            <input type="password" id="password" name="password">
+        <div class="input">
+            <label for="username">Username</label>
+            <input type="text" id="username" class="input-field" name="username">
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input-field" name="password">
         </div>
         <button type="submit" class="btn">Sign In</button>
     </form>
     <form action="login.php">
         <button type="submit" class="btn">Log In</button>  
     </form>
+    </div>
 </body>
 </html>
