@@ -74,44 +74,37 @@
         }
 
         public function save(){
-            $conn = Db::getConnection();
-            $query = $conn->prepare("insert into task (title, hours, deadline, user_id) values (:title, :hours, :deadline, :user_id)");
-            $query->bindValue(":title", $this->title);
-            $query->bindValue(":hours", $this->hours);
-            $query->bindValue(":deadline", $this->deadline);
-            $query->bindValue(":user_id", $this->user_id);
-            $query->execute();
+                $conn = Db::getConnection();
+                $query = $conn->prepare("insert into task (title, hours, deadline, user_id) values (:title, :hours, :deadline, :user_id)");
+                $query->bindValue(":title", $this->title);
+                $query->bindValue(":hours", $this->hours);
+                $query->bindValue(":deadline", $this->deadline);
+                $query->bindValue(":user_id", $this->user_id);
+                $query->execute();
         }
 
         public static function getAll(){
-            $conn = Db::getConnection();
-            $query = $conn->prepare("select * from task");
-            $query->execute();
-            $task = ($query->fetchAll());
-            return $task;
+                $conn = Db::getConnection();
+                $query = $conn->prepare("select * from task");
+                $query->execute();
+                $task = ($query->fetchAll());
+                return $task;
         }
 
-        public static function deleteTask($task_id){
-            $conn = Db::getConnection();
-            $query = $conn->prepare("delete from task where task_id = :task_id");
-            $query->bindValue(":task_id", $task_id);
-            $query->execute();
-        }
-
-        public static function getTaskById($task_id){
+        public static function getAllById($task_id){    
                 $conn = Db::getConnection();
                 $query = $conn->prepare("select * from task where task_id = :task_id");
                 $query->bindValue(":task_id", $task_id);
                 $query->execute();
+                return $query->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        public static function removeTask($task_id){
+                $conn = Db::getConnection();
+                $query = $conn->prepare("delete * from task where task_id = :task_id");
+                $query->bindValue(":task_id", $task_id);
+                $query->execute();
                 $task = ($query->fetch());
                 return $task;
-            }
-
-        public static function getAllById($task_id){    
-            $conn = Db::getConnection();
-            $query = $conn->prepare("select * from task where task_id = :task_id");
-            $query->bindValue(":task_id", $task_id);
-            $query->execute();
-            return $query->fetchAll(PDO::FETCH_ASSOC);
         }
     }

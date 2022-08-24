@@ -1,0 +1,63 @@
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.layout{
+    background-color: #daf2e0;
+    width: 320px;
+    height: 568px;
+    padding: 0px 20px 0px 20px;
+    margin: 50px 0px 0px 0px;
+    border-radius: 1%;
+    font-family: 'Poppins';
+
+}
+
+.login-input{
+    margin-top: 2em;
+}
+
+.login-input label{
+    margin-left: 20%;
+    font-weight: bold;
+}
+
+.login-input-field{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    margin-bottom: 5%;
+    padding: 0.5em 1em 0.5em 1em;
+    text-align: center;
+    border: none;
+    border-bottom: 5px solid rgb(27, 186, 51);
+}
+
+.login-input-field::placeholder{
+    color: black;
+    opacity: 1;
+}
+
+.login-button{
+
+}
+
+.addit{
+    text-align: center;
+}
+
+.btn{
+    background-color: green;
+    color: white;
+    margin: 3%;
+    padding: 1em;
+    border: none;
+    font-weight: bold;
+    font-family: 'Poppins';
+    letter-spacing: 0.2em;
+    border-radius: 3em;
+    padding: 1em 2em 1em 2em;
+
+}

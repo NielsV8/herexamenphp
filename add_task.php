@@ -1,6 +1,7 @@
 <?php 
     include_once(__DIR__ ."/Classes/User.php");
     include_once(__DIR__ ."/Classes/Task.php");
+    include_once(__DIR__ ."/Classes/Security.php");
 
     if(!empty($_POST)){
         try{

@@ -1,5 +1,6 @@
 <?php 
     include_once(__DIR__ ."/Classes/User.php");
+    include_once(__DIR__ ."/Classes/Security.php");
 
     if(!empty($_POST)){
         try{
@@ -29,6 +30,9 @@
             <input type="password" id="password" name="password">
         </div>
         <button type="submit" class="btn">Sign In</button>
+    </form>
+    <form action="login.php">
+        <button type="submit" class="btn">Log In</button>  
     </form>
 </body>
 </html>
