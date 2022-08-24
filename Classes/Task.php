@@ -44,7 +44,11 @@
         public function setHours($hours): self
         {
                 $this->hours = $hours;
-
+                if(!empty($this->hours)){
+                        return $this;
+                    } else {
+                        throw new Exception("Hours may not be empty");
+                    }
                 return $this;
         }
 
@@ -56,7 +60,11 @@
         public function setDeadline($deadline): self
         {
                 $this->deadline = $deadline;
-
+                if(!empty($this->hours)){
+                        return $this;
+                    } else {
+                        throw new Exception("Deadline may not be empty");
+                    }
                 return $this;
         }
 

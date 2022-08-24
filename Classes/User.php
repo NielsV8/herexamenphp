@@ -23,13 +23,11 @@
 
         public function setUsername($username): self
         {
-                $this->username = $username;
-                if(!empty($this->username)){
-                    return $this;
-                } else {
-                    throw new Exception("Username is required");
-                }
-                return $this;
+            if(empty($username)){
+                throw new Exception("Username must not be empty");
+            }
+            $this->username = $username;
+            return $this;
         }
 
         public function getPassword()

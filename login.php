@@ -17,8 +17,8 @@
                     header("location: index.php");
                 }
             }
-        } catch (Exception $e){
-            echo $e->getMessage();
+        } catch (Throwable $e){
+            $e = $e->getMessage();
         }
     }
 ?><!DOCTYPE html>
@@ -41,6 +41,9 @@
             <label for="password">Password</label>
             <input type="password" id="password" class="input-field" name="password">
         </div>
+        <?php if(isset($e)): ?>
+        <div class="error"><?php echo $e; ?></div>
+        <?php endif; ?>
         <button type="submit" class="btn btn-login">Log In</button>
     </form>
     <a class="a-register" href="register.php">Register</a>

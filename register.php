@@ -11,8 +11,8 @@
             session_start();
             $_SESSION ['username'] = $user->getUsername();
             header("location: index.php");
-        } catch (Exception $e){
-            echo $e->getMessage();
+        } catch (Throwable $e){
+            $e = $e->getMessage();
         }
     }
 ?><!DOCTYPE html>
@@ -35,6 +35,9 @@
             <label for="password">Password</label>
             <input type="password" id="password" class="input-field" name="password">
         </div>
+        <?php if(isset($e)): ?>
+        <div class="error"><?php echo $e; ?></div>
+        <?php endif; ?>
         <button type="submit" class="btn btn-register">Register</button>
     </form>
     <a class="a-login" href="login.php">Login</a>

@@ -132,3 +132,8 @@ body{
     top: 90px;
     font-weight: bold;
 }
+
+.error{
+    text-align: center;
+    color: red;
+}

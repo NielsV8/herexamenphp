@@ -11,8 +11,8 @@
             $task->setDeadline($_POST['deadline']);
             $task->save();
             header("location: index.php");
-        } catch (Exception $e){
-            echo $e->getMessage();
+        } catch (Throwable $e){
+            $e = $e->getMessage();
         }
     }
 
@@ -38,6 +38,9 @@
             <label for="deadline">Deadline</label>
             <input class="input-field" type="date" id="deadline" name="deadline">
             <input class="input-field" type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']?>">
+            <?php if(isset($e)): ?>
+            <div class="error"><?php echo $e; ?></div>
+            <?php endif; ?> 
         </div>
         <button type="submit" class="btn btn-add">Add Task</button>
     </form>
