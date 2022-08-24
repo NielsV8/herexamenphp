@@ -56,3 +56,37 @@ body{
     border-radius: 3em;
     padding: 1em 2em 1em 2em;
 }
+
+.task{
+    color: blue;
+    display: flex; 
+    flex-direction: row;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-top: 0.4em;
+}
+
+.logout{
+    color: red;
+    position: absolute;
+    left: 370px;
+    top: 290px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout:hover{
+    font-style: italic;
+}
+
+.addtask{
+    position: absolute;
+    left: 745px;
+    top: 520px;
+    text-decoration: none;
+    border: 20 solid dodgerblue;
+    background-color: dodgerblue;
+    padding: 10px 15px 10px 15px;
+    border-radius: 40px;
+    color: white;
+}
