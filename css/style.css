@@ -55,8 +55,25 @@ body{
     letter-spacing: 0.2em;
     border-radius: 3em;
     padding: 1em 2em 1em 2em;
+}
+
+.btn-add{
     position: absolute;
     left: 650px ;
+}
+
+.btn-login{
+    position: absolute;
+    left: 665px;
+    top: 380px;
+}
+
+.a-register{
+    position: absolute;
+    left: 730px;
+    top: 540px;
+    color: dodgerblue;
+    font-weight: bold;
 }
 
 .task{

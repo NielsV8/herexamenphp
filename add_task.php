@@ -40,7 +40,7 @@
             <input class="input-field" type="date" id="deadline" name="deadline">
             <input class="input-field" type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']?>">
         </div>
-        <button type="submit" class="btn">Add Task</button>
+        <button type="submit" class="btn btn-add">Add Task</button>
     </form>
     </div>
 </body>
