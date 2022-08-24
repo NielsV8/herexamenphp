@@ -26,7 +26,7 @@
     <p>Here you can find all of your tasks. Click on a task to see the details.</p>
     <?php if(!empty($tasks)): ?>
     <?php foreach($tasks as $task): ?>
-        <a href="task.php?id=<?php echo $task['task_id'];?>" class="task"><?php echo $task['title']; ?></a>
+        <a href="task.php?id=<?php echo htmlspecialchars($task['task_id']);?>" class="task"><?php echo htmlspecialchars($task['title']); ?></a>
     <?php endforeach; ?>
     <?php endif; ?>  
     <?php if(empty($tasks)): ?>

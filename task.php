@@ -21,13 +21,13 @@
 
     <?php if(!empty($tasks)): ?>
     <?php foreach($tasks as $task): ?>
-            <h1><?php echo $task['title']; ?></h1>
-            <p>Title: <?php echo $task['title']; ?></p>
-            <p>Hours: <?php echo $task['hours']; ?></p>
-            <p>Deadline: <?php echo $task['deadline']; ?></p>
-            <input type="submit" value="Delete Task" name="delete" id="delete" class="btn">
+            <h1><?php echo htmlspecialchars($task['title']); ?></h1>
+            <p>Title: <?php echo htmlspecialchars($task['title']); ?></p>
+            <p>Hours: <?php echo htmlspecialchars($task['hours']); ?></p>
+            <p>Deadline: <?php echo htmlspecialchars($task['deadline']); ?></p>
     <?php endforeach; ?>
     <?php endif ?>
+    <a href="delete_task.php?id=<?php echo $_GET['id']; ?>">Delete Task</a>
     </div>
 </body>
 </html>
