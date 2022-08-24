@@ -10,8 +10,7 @@
             $task->setHours($_POST['hours']);
             $task->setDeadline($_POST['deadline']);
             $task->save();
-            var_dump($task);
-            //header("location: index.php");
+            header("location: index.php");
         } catch (Exception $e){
             echo $e->getMessage();
         }

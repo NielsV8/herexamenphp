@@ -68,9 +68,23 @@ body{
     top: 380px;
 }
 
+.btn-register{
+    position: absolute;
+    left: 655px;
+    top: 380px;
+}
+
 .a-register{
     position: absolute;
     left: 730px;
+    top: 540px;
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.a-login{
+    position: absolute;
+    left: 745px;
     top: 540px;
     color: dodgerblue;
     font-weight: bold;

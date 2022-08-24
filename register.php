@@ -35,11 +35,9 @@
             <label for="password">Password</label>
             <input type="password" id="password" class="input-field" name="password">
         </div>
-        <button type="submit" class="btn">Sign In</button>
+        <button type="submit" class="btn btn-register">Register</button>
     </form>
-    <form action="login.php">
-        <button type="submit" class="btn">Log In</button>  
-    </form>
+    <a class="a-login" href="login.php">Login</a>
     </div>
 </body>
 </html>
