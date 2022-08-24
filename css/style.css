@@ -55,6 +55,8 @@ body{
     letter-spacing: 0.2em;
     border-radius: 3em;
     padding: 1em 2em 1em 2em;
+    position: absolute;
+    left: 650px ;
 }
 
 .task{
@@ -69,7 +71,7 @@ body{
 .logout{
     color: red;
     position: absolute;
-    left: 368px;
+    left: 370px;
     top: 290px;
     text-decoration: none;
     font-weight: bold;
@@ -81,7 +83,7 @@ body{
 
 .addtask{
     position: absolute;
-    left: 745px;
+    left: 746px;
     top: 520px;
     text-decoration: none;
     border: 20 solid dodgerblue;
